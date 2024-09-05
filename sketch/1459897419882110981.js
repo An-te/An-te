@@ -15,22 +15,17 @@ export default function (sketch) {
 		let y = 0;
 
 		for (let i = n * 9; i--; ) {
+			sketch.push();
 			r -= i & (x % (n / 2)) ? 0 : sketch.PI / 3;
 			x += sketch.sin(r);
 			y += sketch.cos(r);
-			sketch.drawingContext.setTransform(
-				2,
-				0.8,
-				0.2,
-				2,
-				x * 2 + 80,
-				y * 2 + 70,
-			);
+			sketch.applyMatrix(2, 0.8, 0.2, 2, x * 2 + 80, y * 2 + 70);
 			sketch.text(
 				"⳦."[(t + i) % n ? 1 : 0],
 				sketch.min(sketch.tan(((t + (i >> 3)) * sketch.PI) / 75) ** 4, 1) * 60,
 				0,
 			);
+			sketch.pop();
 		}
 	};
 }
