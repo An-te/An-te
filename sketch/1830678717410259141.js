@@ -1,6 +1,6 @@
 export default function (sketch) {
 	let t = 0;
-	const s = 4;
+	const s = 5;
 
 	function a(x, y) {
 		const k = 500 * sketch.noise(t) - x;
