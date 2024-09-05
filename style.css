@@ -36,6 +36,14 @@ p {
     font-size: 1rem;
     /* margin-top: 0; */
 }
+a {
+    font-size: 0.7rem;
+}
+header > a {
+    float: right;
+    /* text-decoration: none; */
+}
+
 .child > img {
     height: 400px;
     width:100%;
