@@ -12,6 +12,7 @@ import s11 from "./1435253179638112264.js"
 import s12 from "./1344420426613628928.js"
 import s13 from "./1459926744815718401.js"
 import s14 from "./1353092193448206336.js"
+import s15 from "./1572967735923200000.js"
 
 export default [
     {
@@ -96,6 +97,12 @@ export default [
         func: s14,
         t: "1353092193448206336",
         text: "t=0,draw=$=>{t++||createCanvas(540,540,WEBGL);background(248);rotateY(t*(e=PI/25)/6);t/25&1||rotate(PI/2);(F=n=>n<1&&box(n*3)||(x=>{for(x of l=[-1,0,1])for(y of l)push(),x+1==(t/25%3^0)&&n==s&&rotateX(t*e),translate(x*n,y*n),x&y||F(n/3),pop();})())(s=120)}",
+        type: "p5js",
+    },
+    {
+        func: s15,
+        t: "1572967735923200000",
+        text: "t=0,s=.1,draw=_=>{t++||createCanvas(540,540);background(9);for(i=s;i<2;i+=s)for(j=0;j<TAU;j+=s)quad(...[[i,j],[i+s,j],[i+s,j+s],[i,j+s]].flatMap(([u,v,x=u*sin(v),y=u*cos(v),e=lerp(x*x+y*y+1,1,sin(t*.02-u/2+j*6))])=>[(x-1)/e*99+360,400+99*(y-1-tan(t*.01))/e]))}",
         type: "p5js",
     },
     {
