@@ -13,6 +13,7 @@ import s12 from "./1344420426613628928.js"
 import s13 from "./1459926744815718401.js"
 import s14 from "./1353092193448206336.js"
 import s15 from "./1572967735923200000.js"
+import s16 from "./1830678717410259141.js"
 
 export default [
     {
@@ -103,6 +104,12 @@ export default [
         func: s15,
         t: "1572967735923200000",
         text: "t=0,s=.1,draw=_=>{t++||createCanvas(540,540);background(9);for(i=s;i<2;i+=s)for(j=0;j<TAU;j+=s)quad(...[[i,j],[i+s,j],[i+s,j+s],[i,j+s]].flatMap(([u,v,x=u*sin(v),y=u*cos(v),e=lerp(x*x+y*y+1,1,sin(t*.02-u/2+j*6))])=>[(x-1)/e*99+360,400+99*(y-1-tan(t*.01))/e]))}",
+        type: "p5js",
+    },
+    {
+        func: s16,
+        t: "1830678717410259141",
+        text: "s=3,t=0,a=(x,y,d=-exp(-mag(k=w*noise(t)-x,e=w*noise(t,9)-y)/(1+45*noise(x/30,y/30))+.5))=>[x+k*d,y+e*d],draw=$=>{t||createCanvas(w=400,w);noFill(t+=.02);background(248);for(y=100;y<300;y+=s)for(x=100;x<300;x+=s)triangle(...[a(x,y),a(x,y+s),a(x+s,y)].flat())}",
         type: "p5js",
     },
     {
