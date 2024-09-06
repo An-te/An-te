@@ -25,6 +25,7 @@
 
 body {
     padding: 20px;
+    /* padding: 4%; */
     /* font-family: Verdana; */
     font-family: "Nova Mono", monospace;
     font-weight: 600;
@@ -89,7 +90,10 @@ summary, .p5Canvas {
     cursor: pointer;
 }
 
-@media (width <= 768px) {   
+@media (width <= 768px) {
+    body {
+        padding: 4%;
+    }
     .p5Canvas {
         zoom: 0.5;
     }
