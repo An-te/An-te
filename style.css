@@ -89,7 +89,7 @@ summary, .p5Canvas {
     cursor: pointer;
 }
 
-@media (max-width: 767px){   
+@media (width <= 768px) {   
     .p5Canvas {
         zoom: 0.5;
     }
