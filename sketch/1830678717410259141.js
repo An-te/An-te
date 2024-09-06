@@ -17,14 +17,13 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		if (t > 0) {
-			sketch.background(248);
-			sketch.noFill();
-			sketch.background(248);
-			for (let y = 50; y < 300; y += s)
-				for (let x = 100; x < 400; x += s)
-					sketch.triangle(...[a(x, y), a(x, y + s), a(x + s, y)].flat());
-		}
+		if (sketch.frameCount === 1) return;
 		t += 0.02;
+		sketch.background(248);
+		sketch.noFill();
+		sketch.background(248);
+		for (let y = 50; y < 300; y += s)
+			for (let x = 100; x < 400; x += s)
+				sketch.triangle(...[a(x, y), a(x, y + s), a(x + s, y)].flat());
 	};
 }

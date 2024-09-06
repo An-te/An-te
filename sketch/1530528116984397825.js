@@ -21,12 +21,11 @@ export default function (sketch) {
 		sketch.noLoop();
 	};
 	sketch.draw = () => {
-		if (t > 0) {
-			sketch.background(241);
-			sketch.translate(w / 2, w / 2);
-			k(2 - (t % 1) * n);
-			sketch.circle(0, -199, 60);
-		}
+		if (sketch.frameCount === 1) return;
 		t += 0.03;
+		sketch.background(241);
+		sketch.translate(w / 2, w / 2);
+		k(2 - (t % 1) * n);
+		sketch.circle(0, -199, 60);
 	};
 }

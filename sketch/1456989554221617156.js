@@ -28,11 +28,10 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		if (t > 0) {
-			sketch.background(240);
-			sketch.noStroke();
-			F(s);
-		}
+		if (sketch.frameCount === 1) return;
 		t += 0.01;
+		sketch.background(240);
+		sketch.noStroke();
+		F(s);
 	};
 }

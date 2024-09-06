@@ -17,27 +17,27 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		if (t++) {
-			sketch.background(248);
-			m.sub(
-				m
-					.copy()
-					.sub(
-						[
-							[0, 0],
-							[142, 86],
-							[50, 80],
-							[0, 160],
-						][(t / 50) & 3],
-					)
-					.div(9),
-			);
-			for (let j = p * q; j--; ) {
-				const i = (j / p) ^ 0;
-				const a = e(i, j);
-				const b = e(~-q - i, -~j);
-				sketch.line(a.x, a.y, b.x, b.y);
-			}
+		if (sketch.frameCount === 1) return;
+		t++;
+		sketch.background(248);
+		m.sub(
+			m
+				.copy()
+				.sub(
+					[
+						[0, 0],
+						[142, 86],
+						[50, 80],
+						[0, 160],
+					][(t / 50) & 3],
+				)
+				.div(9),
+		);
+		for (let j = p * q; j--; ) {
+			const i = (j / p) ^ 0;
+			const a = e(i, j);
+			const b = e(~-q - i, -~j);
+			sketch.line(a.x, a.y, b.x, b.y);
 		}
 	};
 }
