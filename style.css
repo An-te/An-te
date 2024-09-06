@@ -46,6 +46,15 @@ header {
     align-items: baseline;
     flex-wrap: wrap;
 }
+span {
+    font-size: clamp(1rem, 0.273rem + 3.64vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow-wrap: anywhere;
+    word-break:break-all;
+}
 
 .child > img {
     height: 400px;
