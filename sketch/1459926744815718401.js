@@ -11,14 +11,15 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		t++;
-		sketch.background(9);
-		sketch.fill(255, 96);
-		sketch.translate(50, -50);
-		sketch.shearY(0.3);
-		sketch.text(`${"❀❂"[(t / 10) & 1]}\n${"➡✕"[(t / 50) & 1]}\n｜`, 220, 140);
-		e();
-		sketch.shearX(-0.5);
-		for (let i = 8; i--; ) sketch.rect(i * 6 + 265, 180, 5, 20);
+		if (t++) {
+			sketch.background(9);
+			sketch.fill(255, 96);
+			sketch.translate(50, -50);
+			sketch.shearY(0.3);
+			sketch.text(`${"❀❂"[(t / 10) & 1]}\n${"➡✕"[(t / 50) & 1]}\n｜`, 220, 140);
+			e();
+			sketch.shearX(-0.5);
+			for (let i = 8; i--; ) sketch.rect(i * 6 + 265, 180, 5, 20);
+		}
 	};
 }

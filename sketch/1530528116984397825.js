@@ -9,11 +9,11 @@ export default function (sketch) {
 		const c = -x * 160 - m;
 		x > 0 &&
 			sketch.noFill(m, a) +
-            sketch.line(h, m, w, m) +
-            sketch.rect(h, c, m / 2, m / 9) +
-            sketch.rect(h, m, 1, c - m) +
-            sketch.arc(x * 90 - m, 9, m, m, sketch.PI, 0) +
-            k(x - n);
+				sketch.line(h, m, w, m) +
+				sketch.rect(h, c, m / 2, m / 9) +
+				sketch.rect(h, m, 1, c - m) +
+				sketch.arc(x * 90 - m, 9, m, m, sketch.PI, 0) +
+				k(x - n);
 	};
 
 	sketch.setup = () => {
@@ -21,10 +21,12 @@ export default function (sketch) {
 		sketch.noLoop();
 	};
 	sketch.draw = () => {
+		if (t > 0) {
+			sketch.background(241);
+			sketch.translate(w / 2, w / 2);
+			k(2 - (t % 1) * n);
+			sketch.circle(0, -199, 60);
+		}
 		t += 0.03;
-		sketch.background(241);
-		sketch.translate(w / 2, w / 2);
-		k(2 - (t % 1) * n);
-		sketch.circle(0, -199, 60);
 	};
 }
