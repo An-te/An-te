@@ -18,15 +18,15 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		if (t++) {
-			sketch.background(248);
-			sketch.ortho();
-			F(sketch.translate(-50, 70, 250));
-			F(
-				sketch.translate(180, -40) +
-					sketch.rotate((sketch.PI * 3) / 8, [1, 0, 0]) +
-					sketch.rotate(sketch.PI / 4),
-			);
-		}
+		if (sketch.frameCount === 1) return;
+		t++;
+		sketch.background(248);
+		sketch.ortho();
+		F(sketch.translate(-50, 70, 250));
+		F(
+			sketch.translate(180, -40) +
+				sketch.rotate((sketch.PI * 3) / 8, [1, 0, 0]) +
+				sketch.rotate(sketch.PI / 4),
+		);
 	};
 }

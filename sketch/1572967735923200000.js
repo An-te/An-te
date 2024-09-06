@@ -9,33 +9,33 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		if (t++) {
-			sketch.background(9);
-			for (let i = s; i < 2; i += s)
-				for (let j = 0; j < sketch.TAU; j += s)
-					sketch.quad(
-						...[
-							[i, j],
-							[i + s, j],
-							[i + s, j + s],
-							[i, j + s],
-						].flatMap(
-							([
-								u,
-								v,
-								x = u * sketch.sin(v),
-								y = u * sketch.cos(v),
-								e = sketch.lerp(
-									x * x + y * y + 1,
-									1,
-									sketch.sin(t * 0.02 - u / 2 + j * 6),
-								),
-							]) => [
-								((x - 1) / e) * 99 + 360,
-								300 + (99 * (y - 1 - sketch.tan(t * 0.01))) / e,
-							],
-						),
-					);
-		}
+		if (sketch.frameCount === 1) return;
+		t++;
+		sketch.background(9);
+		for (let i = s; i < 2; i += s)
+			for (let j = 0; j < sketch.TAU; j += s)
+				sketch.quad(
+					...[
+						[i, j],
+						[i + s, j],
+						[i + s, j + s],
+						[i, j + s],
+					].flatMap(
+						([
+							u,
+							v,
+							x = u * sketch.sin(v),
+							y = u * sketch.cos(v),
+							e = sketch.lerp(
+								x * x + y * y + 1,
+								1,
+								sketch.sin(t * 0.02 - u / 2 + j * 6),
+							),
+						]) => [
+							((x - 1) / e) * 99 + 360,
+							300 + (99 * (y - 1 - sketch.tan(t * 0.01))) / e,
+						],
+					),
+				);
 	};
 }
