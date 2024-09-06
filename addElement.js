@@ -84,7 +84,6 @@ function addImg(img) {
 
 	const newContent = new Image();
 	newContent.src = img;
-	newContent.loading = "lazy";
 	newDiv.appendChild(newContent);
 
 	const currentDiv = document.getElementById("parent");
