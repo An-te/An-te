@@ -24,12 +24,13 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
-		t++;
-		sketch.background(248);
-		sketch.noStroke();
-		sketch.fill(0, 96);
-		sketch.rotateY((t * e) / 6);
-		(t * e) & 1 || sketch.rotate(sketch.PI / 2);
-		F(s);
+		if (t++) {
+			sketch.background(248);
+			sketch.noStroke();
+			sketch.fill(0, 96);
+			sketch.rotateY((t * e) / 6);
+			(t * e) & 1 || sketch.rotate(sketch.PI / 2);
+			F(s);
+		}
 	};
 }

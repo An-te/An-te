@@ -16,12 +16,10 @@ export default function (sketch) {
 			[a, a],
 			[a, 0],
 		].map(([w, h]) => {
-            const n = x + w;
-            const m = y + h;
-            const c = sketch.noise(n / s * 5, t, t + m * s) ** 2;
-			c > 0.2
-				? F(a / 2, n, m)
-				: sketch.fill(5 / c) + F2(c, n, m, a);
+			const n = x + w;
+			const m = y + h;
+			const c = sketch.noise((n / s) * 5, t, t + m * s) ** 2;
+			c > 0.2 ? F(a / 2, n, m) : sketch.fill(5 / c) + F2(c, n, m, a);
 		});
 
 	sketch.setup = () => {
@@ -30,9 +28,11 @@ export default function (sketch) {
 	};
 
 	sketch.draw = () => {
+		if (t > 0) {
+			sketch.background(240);
+			sketch.noStroke();
+			F(s);
+		}
 		t += 0.01;
-		sketch.background(240);
-		sketch.noStroke();
-		F(s);
 	};
 }
