@@ -39,9 +39,11 @@ p {
 a {
     font-size: 0.7rem;
 }
-header > a {
-    float: right;
-    /* text-decoration: none; */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .child > img {
