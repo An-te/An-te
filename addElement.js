@@ -27,6 +27,19 @@ function addElement() {
 	// div.style.animation = 'anim 1s linear forwards';
 }
 
+function scrollAmount() {
+	const scrollHeight = () =>
+		Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight,
+		) - window.innerHeight;
+	return window.scrollY / scrollHeight();
+}
+
 function createDetail(summary, detail) {
 	const newDiv = document.createElement("div");
 	newDiv.className = "detail";
