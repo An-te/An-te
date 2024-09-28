@@ -147,10 +147,6 @@ summary,
 	right: 0;
 }
 
-.anim {
-	animation: anim 3s forwards;
-}
-
 #composite {
 	position: absolute;
 	left: 0;
