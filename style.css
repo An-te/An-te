@@ -5,66 +5,62 @@
 	--bd-color: #1b1a1a;
 }
 
-.parent {
-	display: flex;
-	flex-wrap: wrap;
-}
-.child {
-	flex-direction: row;
-	flex-grow: 1;
-	overflow: hidden;
-}
-/* .child:last-child {
-    width: 100%;
-} */
-
-.parent > div {
-	margin: 2%;
-	text-align: center;
-}
-
 body {
 	padding: 20px;
-	/* padding: 4%; */
-	/* font-family: Verdana; */
 	font-family: "Nova Mono", monospace;
 	font-weight: 600;
 	font-style: normal;
-	/* font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem); */
 	background-color: var(--bg-color);
 	color: var(--tx-color);
 }
 p {
 	font-size: 1rem;
-	/* margin-top: 0; */
 }
 a {
 	font-size: 0.7rem;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
 	flex-wrap: wrap;
 }
-span {
+
+.parent {
+	display: flex;
+	flex-wrap: wrap;
+}
+.child {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: hidden;
+}
+
+.parent > div {
+	margin: 2%;
+	padding: 24px 24px 29px 24px;
+}
+.child > img {
+	height: 400px;
+	width: 100%;
+	/* display: block; */
+	object-fit: cover;
+}
+.child > span {
 	font-size: clamp(1rem, 0.273rem + 3.64vw, 3rem);
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	height: 100%;
 	overflow-wrap: anywhere;
 	word-break: break-all;
 }
 
-.child > img {
-	height: 400px;
-	width: 100%;
-	object-fit: cover;
-}
 .detail {
 	width: 500px;
-	display: inline-block;
 	overflow-wrap: anywhere;
 	word-break: break-all;
 }
@@ -73,17 +69,17 @@ details {
 	padding: 0 16%;
 	font-size: .8em;
 	text-align: left;
+	& > summary::after {
+		content: "<|>";
+	}
+	&[open] > summary::after {
+		content: "</>";
+	}
 }
 summary {
 	font-size: 1rem;
 	text-align: center;
 	list-style: none;
-}
-details > summary::after {
-	content: "<|>";
-}
-details[open] > summary::after {
-	content: "</>";
 }
 
 summary,
@@ -104,47 +100,45 @@ summary,
 }
 
 .parent {
-	--x-gradient: repeating-linear-gradient(
+	--x-grad: repeating-linear-gradient(
 		90deg,
 		rgba(0, 0, 0, 1),
 		rgba(0, 0, 0, 1) 10px,
 		transparent 0,
 		transparent calc(100% - 10px)
 	);
-	--y-gradient: repeating-linear-gradient(
+	--y-grad: repeating-linear-gradient(
 		rgba(0, 0, 0, 1),
 		rgba(0, 0, 0, 1) 4px,
 		transparent 0,
 		transparent calc(100% - 4px)
 	);
-	background-image: var(--x-gradient), var(--y-gradient), var(--x-gradient),
-		var(--y-gradient);
+	background-image: var(--x-grad), var(--y-grad), var(--x-grad), var(--y-grad);
 	background-repeat: no-repeat;
 	background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
 	background-position: top, right, bottom, left;
 }
 .child {
-	padding: 24px;
 	position: relative;
-}
-.child::before,
-.child::after {
-	content: "";
-	width: 24px;
-	height: 250px;
-	position: absolute;
-}
-.child::before {
-	border-left: double 4px var(--bd-color);
-	border-top: dotted 2px var(--bd-color);
-	top: 0;
-	left: 0;
-}
-.child::after {
-	border-right: double 4px var(--bd-color);
-	border-bottom: dotted 2px var(--bd-color);
-	bottom: 0;
-	right: 0;
+	&::before,
+	&::after {
+		content: "";
+		width: 24px;
+		height: 250px;
+		position: absolute;
+	}
+	&::before {
+		border-left: double 4px var(--bd-color);
+		border-top: dotted 2px var(--bd-color);
+		top: 0;
+		left: 0;
+	}
+	&::after {
+		border-right: double 4px var(--bd-color);
+		border-bottom: dotted 2px var(--bd-color);
+		bottom: 0;
+		right: 0;
+	}
 }
 
 #composite {
