@@ -47,7 +47,7 @@ header {
 .child > img {
 	height: 400px;
 	width: 100%;
-	/* display: block; */
+	display: block;
 	object-fit: cover;
 }
 .child > span {
@@ -65,10 +65,14 @@ header {
 	word-break: break-all;
 }
 details {
-	margin: 2%;
-	padding: 0 16%;
+	padding: 0 13%;
+	line-height: 1.4em;
 	font-size: .8em;
 	text-align: left;
+	&[open] {
+		height: 140px;
+		transition: 0.5s;
+	}
 	& > summary::after {
 		content: "<|>";
 	}
@@ -80,6 +84,7 @@ summary {
 	font-size: 1rem;
 	text-align: center;
 	list-style: none;
+	line-height: 2em;
 }
 
 summary,
@@ -97,6 +102,10 @@ summary,
 	}
 	.detail {
 		width: 250px;
+	}
+	details[open] {
+		height: 170px;
+		padding: 0;
 	}
 }
 
