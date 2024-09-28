@@ -1,7 +1,7 @@
 import createDetail from "./createDetail.js";
 import createP from "./createP.js";
 
-export default function (id, f, t, d) {
+export default function (id, f, t, d, cls) {
 	const newDiv = document.createElement("div");
 	newDiv.className = "child";
 	newDiv.id = id;
@@ -24,10 +24,10 @@ export default function (id, f, t, d) {
 		const entry = entries[0];
 		if (entry.isIntersecting) {
 			p.loop();
-			entry.target.classList.add("anim");
+			entry.target.classList.add(cls);
 		} else {
 			p.noLoop();
-			entry.target.classList.remove("anim");
+			entry.target.classList.remove(cls);
 		}
 	});
 	observer.observe(p.canvas);
