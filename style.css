@@ -71,7 +71,7 @@ details {
 	text-align: left;
 	&[open] {
 		height: 140px;
-		transition: 0.5s;
+		/* transition: 0.5s; */
 	}
 	& > summary::after {
 		content: "<|>";
