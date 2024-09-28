@@ -78,14 +78,13 @@ function addP5js(id, f, t, d) {
 	);
 
 	const observer = new IntersectionObserver((entries, observer) => {
-		for (const entry of entries) {
-			if (entry.isIntersecting) {
-				p.loop();
-				entry.target.classList.add("anim");
-			} else {
-				p.noLoop();
-				entry.target.classList.remove("anim");
-			}
+		const entry = entries[0];
+		if (entry.isIntersecting) {
+			p.loop();
+			entry.target.classList.add("anim");
+		} else {
+			p.noLoop();
+			entry.target.classList.remove("anim");
 		}
 	});
 	observer.observe(p.canvas);
